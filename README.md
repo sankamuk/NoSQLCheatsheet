@@ -12,6 +12,15 @@ Section 1 - Concepts
 
 Section 2 - Redis
 
+- [01](04/Chapter01.md) Overview
+- [02](04/Chapter02.md) Basic Operations
+- [03](04/Chapter03.md) Cli
+- [04](04/Chapter04.md) Scan & Data Access
+- [05](04/Chapter05.md) Config
+- [06](04/Chapter06.md) Data Type
+- [07](04/Chapter07.md) Persistent
+- [08](04/Chapter08.md) Python Client
+- [EXAMPLES](04/templates)
 
 Section 3 - MongoDB
 
