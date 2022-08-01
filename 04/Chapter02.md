@@ -196,3 +196,39 @@ OK
 
 > Note if there is no Expiry TTL is -1 and once the key expired it becomes -2 (Not Set Key). Every other scenario the TTL represents value of second remain for expiry.
 
+
+- Mass Insert (Bulk Load)
+
+***Sequential Approach***
+
+```commandline
+sh-4.2$ cat /tmp/student.csv
+ali,1
+prem,2
+dab,3
+raj,5
+sh-4.2$ awk -F, '{ print "SET STUD:" $2 " " $1 }' /tmp/student.csv
+SET STUD:1 ali
+SET STUD:2 prem
+SET STUD:3 dab
+SET STUD:5 raj
+
+sh-4.2$ awk -F, '{ print "SET STUD:" $2 " " $1 }' /tmp/student.csv | redis-cli
+OK
+OK
+OK
+OK
+
+127.0.0.1:6379> KEYS STUD:*
+1) "STUD:5"
+2) "STUD:3"
+3) "STUD:2"
+4) "STUD:1"
+```
+
+***Atomic Approach***
+
+```commandline
+awk -F, '{ print "SET STUD:" $2 " " $1 }' /tmp/student.csv | redis-cli --pipe
+```
+
