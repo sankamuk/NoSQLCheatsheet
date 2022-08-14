@@ -1,6 +1,6 @@
 # NoSQLCheatsheet
 
-![NoSQL](https://img.shields.io/badge/database-NoSQL-brightgreen.svg)
+![NoSQL](https://img.shields.io/badge/database-NoSQL-brightgreen.svg) ![Language](https://img.shields.io/badge/Language-Python-brightgreen.svg)
 
 My notes on the data storage system NoSQL.
 
